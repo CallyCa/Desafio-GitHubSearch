@@ -1,10 +1,7 @@
 <template>
-  <nav class="navbar navbar-dark bg-success mb-3">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a
-        href="#"
-        class="navbar-brand"
-      >GitHub Search</a>
+      <a href="#" class="navbar-brand">TESTE</a>
     </div>
   </nav>
 </template>

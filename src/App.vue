@@ -1,38 +1,32 @@
 <template>
   <div>
     <Navbar />
-    <div class="container">
-      <div class="search card card-body">
-        <h1>Pesquisar Usuários do GitHub</h1>
-        <p class="lead">
-          Digite um nome para encontrar usuários e repositórios
-        </p>
-        <input
-          @keyup="getUser"
-          class="form-control"
-          placeholder="Digite o nome de um usuário..."
-          required
-        />
-      </div>
+    <div class="container grid-xs py-2">
 
-      <div
-        class="row mt-3"
-        v-if="user.length !== 0"
-      >
+      <form>
+        <h1>Github Search</h1>
+        <div class="input-group">
+          <input type="text" @keyup="getUser" class="form-input" placeholder="Informe um usuário" required/>
+          <button class="btn btn-primary input-group-btn">
+            <i class="icon icon-search"></i> Buscar
+            </button>
+          
+        </div>
+      </form>
+      <hr>
+      
+
+      <div class="row mt-3" v-if="user.length !== 0">
         <div class="col-md-4">
           <Profile :user="user" />
         </div>
-        <div class="col-md-8">
-          <Repos
-            v-for="repo in repos"
-            :repo="repo"
-            :key="repo"
-          />
+        <div class="col-md-8"><Repos v-for="repo in repos" :repo="repo" :key="repo"/>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from "axios";
@@ -46,8 +40,8 @@ export default {
     return {
       github: {
         url: "https://api.github.com/users",
-        client_id: "Iv1.01dc46c69f537d31",
-        client_secret: "34cb3e192992adc5022560f0b4834731318d044f",
+        client_id: "Iv1.d3173fe62161d289",
+        client_secret: "e2b2f6fd48cdcd796c44ec85070d24658a2e0901",
         count: 7,
         sort: "created: asc"
       },
